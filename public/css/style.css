@@ -1,0 +1,101 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.resto-choix__liste {
+  display: flex;
+  border: 1px solid black;
+}
+.resto-choix__liste__vignette {
+  position: relative;
+  height: 300px;
+  width: 500;
+  border: 1px solid black;
+}
+.resto-choix__liste__vignette__lien img {
+  height: 70%;
+  width: 100%;
+  object-fit: cover;
+}
+.resto-choix__liste__vignette__lien__nouveau {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.resto-choix__liste__vignette__lien__info {
+  height: 30%;
+  width: 100%;
+  border: 1px solid red;
+}
+.resto-choix__liste__vignette__coeur {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid blue;
+}
+.resto-choix__liste__vignette__coeur--vide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  z-index: 1;
+  opacity: 1;
+  transition: all 400ms;
+}
+.resto-choix__liste__vignette__coeur--vide:hover + .resto-choix__liste__vignette__coeur--plein {
+  opacity: 1;
+  transform: scale(1);
+}
+.resto-choix__liste__vignette__coeur--vide:hover {
+  opacity: 0;
+}
+.resto-choix__liste__vignette__coeur--plein {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  font-size: 1.4rem;
+  background: radial-gradient(ellipse at 5px 5px, #ff79da, #c6008f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 250ms;
+  z-index: -1;
+}
+
+/* -- ordre de priorité (pense bete) --
+*************************************
+   1 - Utils :
+            1-Variables.
+            2-Fonctions.
+            3-Mixins.
+            4-Placeholders.
+    2 - Feuilles de style de tiers (vendors) (si vous en avez).
+    3 - Base.
+    4 - Composants.
+    5 - Layout.
+    6 - Pages.
+    7 - Thèmes.
+*************************************
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./components/buttons";
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/container";
+@import "./layouts/form";
+@import "./pages/work";
+@import "./pages/about";
+@import "./pages/project";
+*/
+
+/*# sourceMappingURL=style.css.map */

@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/style.css" />
+
+    <link rel="stylesheet" href="public/css/prefixed/style.css" />
+    <link rel="stylesheet" href="public/fontawesome-free-5.15.2-web/css/all.min.css" />
+
     <title>Ohmyfood</title>
 </head>
+
 <body>
- 
+    <div>
+        <header>
+            <img src="/public/images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood">
+            <div class="localisation"></div>
+        </header>
+        <section class="presentation">
+
+        </section>
+        <section class="resto-choix">
+            <h1>Restaurants</h1>
+            <article class="resto-choix__liste">
+
+                <div class="resto-choix__liste__vignette">
+                    <a class="resto-choix__liste__vignette__lien" href="">
+                        <img src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                            alt="Photo La galette du gout">
+                        <p class="resto-choix__liste__vignette__lien__nouveau">Nouveau</p>
+                        <div class="resto-choix__liste__vignette__lien__info">
+                            <h3>La galette du goût</h3>
+                            <p>Ménilmontant</p>
+                        </div>
+                    </a>
+                    <div class="resto-choix__liste__vignette__coeur">
+                        <i class="far fa-heart resto-choix__liste__vignette__coeur--vide"></i>
+                        <i class="fas fa-heart resto-choix__liste__vignette__coeur--plein"></i>              
+                    </div>
+                </div>
+
+            </article>
+
+        </section>
+        <footer>
+            <p>Ohmyfood</p>
+        </footer>
+    </div>
 </body>
+
 </html>

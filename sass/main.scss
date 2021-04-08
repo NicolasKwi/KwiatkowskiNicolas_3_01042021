@@ -1,1 +1,36 @@
 @import "./utils/variables";
+@import "./base/base";
+@import "./base/typography";
+
+
+
+
+/* -- ordre de priorité (pense bete) --
+*************************************
+   1 - Utils :
+            1-Variables.
+            2-Fonctions.
+            3-Mixins.
+            4-Placeholders.
+    2 - Feuilles de style de tiers (vendors) (si vous en avez).
+    3 - Base.
+    4 - Composants.
+    5 - Layout.
+    6 - Pages.
+    7 - Thèmes.
+*************************************
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./components/buttons";
+@import "./layouts/header";
+@import "./layouts/nav";
+@import "./layouts/container";
+@import "./layouts/form";
+@import "./pages/work";
+@import "./pages/about";
+@import "./pages/project";
+*/
