@@ -1,0 +1,50 @@
+.compo-coeur {   
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+
+    &__vide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1.5rem;
+
+      z-index: 1;
+      opacity: 1;
+      transition: all 400ms;
+
+      cursor: pointer;
+
+      &:hover + .compo-coeur__plein {
+        opacity: 1;
+        transform: scale(1);
+      }
+      &:hover {
+        opacity: 0;
+      }
+    }
+    &__plein {
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      font-size: 1.4rem;
+
+      opacity: 0;
+      transform: scale(0);
+      transition: all 250ms;
+      z-index: 0;
+
+      // technique pour utiliser le gradient sur les icons fontawesome
+      background: radial-gradient(
+        ellipse at 5px 5px,
+        map-get($map: $couleur, $key: secondaire),
+        darken(map-get($map: $couleur, $key: secondaire), 35%)
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: initial;
+    }
+  }

@@ -6,8 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="public/css/prefixed/style.css" />
+    <!--<link rel="stylesheet" href="public/css/prefixed/style.css" />-->
+    <link rel="stylesheet" href="public/css/style.css" />
+
+    <!--pour les icons font awesome-->
     <link rel="stylesheet" href="public/fontawesome-free-5.15.2-web/css/all.min.css" />
+
+    <!--polices d'ecriture-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 
     <title>Ohmyfood</title>
 </head>
@@ -15,37 +23,149 @@
 <body>
     <div>
         <header>
-            <img src="/public/images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood">
-            <div class="localisation"></div>
+            <a href=""> <i class="fas fa-arrow-left"></i></a>
+            <div><img src="./public/images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood"> </div>
         </header>
-        <section class="presentation">
-
-        </section>
-        <section class="resto-choix">
-            <h1>Restaurants</h1>
-            <article class="resto-choix__liste">
-
-                <div class="resto-choix__liste__vignette">
-                    <a class="resto-choix__liste__vignette__lien" href="">
-                        <img src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                            alt="Photo La galette du gout">
-                        <p class="resto-choix__liste__vignette__lien__nouveau">Nouveau</p>
-                        <div class="resto-choix__liste__vignette__lien__info">
-                            <h3>La galette du goût</h3>
-                            <p>Ménilmontant</p>
-                        </div>
+         <!--composant-->
+        <div class="compo-loadspinner">           
+            <img src="./public/images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood">
+            <i class="fas fa-spinner fa-pulse"></i>
+            <p>Chargement</p>
+        </div>
+        <div class="main">
+            <section class="presentation">
+                <div class="presentation__loc">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Paris, Belleville</p>
+                </div>
+                <div class="presentation__explo">
+                    <h2 class="presentation__explo__titre">Réservez le menu qui vous convient</h2>
+                    <p class="presentation__explo__info">Découvrez des restaurants d'exeption, séléctionés par nos
+                        soins.</p>
+                    <a class="presentation__explo__boutton" href="">
+                        <p>Explorer nos restaurants</p>
                     </a>
-                    <div class="resto-choix__liste__vignette__coeur">
-                        <i class="far fa-heart resto-choix__liste__vignette__coeur--vide"></i>
-                        <i class="fas fa-heart resto-choix__liste__vignette__coeur--plein"></i>              
+                </div>
+                <div class="presentation__fonc">
+                    <h1>Fonctionnement</h1>
+                    <div class="presentation__fonc__info">
+                        <div class="presentation__fonc__info__etape">
+                            <p class="presentation__fonc__info__etape__nbr">1</p>
+                            <i class="fas fa-mobile-alt"></i>
+                            <p class="presentation__fonc__info__etape__txt">Choisissez un restaurant</p>
+                        </div>
+                        <div class="presentation__fonc__info__etape">
+                            <p class="presentation__fonc__info__etape__nbr">2</p>
+                            <i class="fas fa-list"></i>
+                            <p class="presentation__fonc__info__etape__txt">Composez votre menu</p>
+                        </div>
+                        <div class="presentation__fonc__info__etape">
+                            <p class="presentation__fonc__info__etape__nbr">3</p>
+                            <i class="fas fa-store"></i>
+                            <p class="presentation__fonc__info__etape__txt">Dégustez au restaurant</p>
+                        </div>
                     </div>
                 </div>
+            </section>
+            <section class="resto-choix">
+                <h1>Restaurants</h1>
+                <article class="resto-choix__liste">
 
-            </article>
+                    <div class="resto-choix__liste__vignette">
+                        <a class="resto-choix__liste__vignette__lien" href="">
+                            <img src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                                alt="Photo La galette du gout">
+                            <p class="resto-choix__liste__vignette__lien__nouveau">Nouveau</p>
+                            <div class="resto-choix__liste__vignette__lien__info">
+                                <h3>La galette du goût</h3>
+                                <p>Ménilmontant</p>
+                            </div>
+                        </a>
+                        <div class="resto-choix__liste__vignette__favoris">
+                            <!--composant-->
+                            <div class="compo-coeur">
+                                <i class="far fa-heart compo-coeur__vide"></i>
+                                <i class="fas fa-heart compo-coeur__plein"></i>
+                            </div>
+                        </div>
+                    </div>
 
-        </section>
+                    <div class="resto-choix__liste__vignette">
+                        <a class="resto-choix__liste__vignette__lien" href="">
+                            <img src="public/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
+                                alt="Photo La note enchantée">
+                            <p class="resto-choix__liste__vignette__lien__nouveau">Nouveau</p>
+                            <div class="resto-choix__liste__vignette__lien__info">
+                                <h3>La note enchantée</h3>
+                                <p>Charonne</p>
+                            </div>
+                        </a>
+                        <div class="resto-choix__liste__vignette__favoris">
+                            <!--composant-->
+                            <div class="compo-coeur">
+                                <i class="far fa-heart compo-coeur__vide"></i>
+                                <i class="fas fa-heart compo-coeur__plein"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resto-choix__liste__vignette">
+                        <a class="resto-choix__liste__vignette__lien" href="">
+                            <img src="public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+                                alt="Photo À la française">
+
+                            <div class="resto-choix__liste__vignette__lien__info">
+                                <h3>À la française</h3>
+                                <p>Cité Rouge</p>
+                            </div>
+                        </a>
+                        <div class="resto-choix__liste__vignette__favoris">
+                            <!--composant-->
+                            <div class="compo-coeur">
+                                <i class="far fa-heart compo-coeur__vide"></i>
+                                <i class="fas fa-heart compo-coeur__plein"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resto-choix__liste__vignette">
+                        <a class="resto-choix__liste__vignette__lien" href="">
+                            <img src="public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                                alt="Photo Le délice des sens">
+
+                            <div class="resto-choix__liste__vignette__lien__info">
+                                <h3>Le délice des sens</h3>
+                                <p>Folie-Méricourt</p>
+                            </div>
+                        </a>
+                        <div class="resto-choix__liste__vignette__favoris">
+                            <!--composant-->
+                            <div class="compo-coeur">
+                                <i class="far fa-heart compo-coeur__vide"></i>
+                                <i class="fas fa-heart compo-coeur__plein"></i>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+
         <footer>
-            <p>Ohmyfood</p>
+            <a href="" class="footer__titre">
+                <h4>ohmyfood</h4>
+            </a>
+            <div class="footer__liens">
+                <a href="" class="footer__liens__1">
+                    <p>Proposer un restaurant</p>
+                </a>
+                <a href="" class="footer__liens__2">
+                    <p>Devenir partenaire</p>
+                </a>
+                <a href="" class="footer__liens__3">
+                    <p>Mentions Légales</p>
+                </a>
+                <a href="mailto:ohmyfood.contact@gmail.com" class="footer__liens__4">
+                    <p>Contact</p>
+                </a>
+            </div>
         </footer>
     </div>
 </body>

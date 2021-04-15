@@ -1,0 +1,215 @@
+//titres
+h1,
+h2,
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-style: bold;
+  font-size: 1.3rem;
+}
+h3 {
+  font-size: 1rem;
+}
+//cache le retour à l'index, utilisé pour les pages menu des restaurants
+header a {
+  display: none;
+}
+
+// code page acceuil
+.main {
+  margin-top: 66px;
+
+  // **** section presentation ****
+  & .presentation {
+    &__loc {
+      height: 50px;
+      @include flex-centrer;
+      background: map-get($map: $couleur, $key: fond-fonce);
+
+      & p {
+        margin-left: 15px;
+      }
+    }
+    &__explo {
+      height: 300px;
+      background: map-get($map: $couleur, $key: fond);
+      text-align: center;
+      padding: 20px;
+
+      &__titre {
+        margin-top: 20px;
+        font-size: 1.7rem;
+        font-weight: bold;
+      }
+
+      &__info {
+        margin-top: 20px;
+        width: 100%;
+        font-size: large;
+      }
+
+      &__boutton {
+        margin: auto;
+        @include flex-centrer;
+        margin-top: 30px;
+        width: 300px;
+        height: 50px;
+        border-radius: 25px;
+        background: radial-gradient(
+          ellipse at 20px 5px,
+          lighten(map-get($map: $couleur, $key: primaire), 10%),
+          map-get($map: $couleur, $key: primaire)
+        );
+        @include hombre-bas;
+        &:hover {
+          background: radial-gradient(
+            ellipse at 100px 25px,
+            map-get($map: $couleur, $key: primaire),
+            lighten(map-get($map: $couleur, $key: primaire), 10%)
+          );
+          @include hover-bas;
+        }
+
+        & p {
+          color: white;
+        }
+      }
+    }
+    &__fonc {
+      margin: 20px;
+      background: white;
+
+      &__info {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+
+        &__etape {
+          display: flex;
+          border-radius: 10px;
+          height: 60px;
+          width: 330px;
+          align-items: center;
+          cursor: default;
+          @include hombre-bas;
+
+          &:hover {
+            background-color: #f5edff;
+            @include hover-bas;
+          }
+
+          &__txt {
+            font-weight: bold;
+          }
+
+          & i {
+            margin-left: 25px;
+            margin-right: 20px;
+            width: 20px;
+            font-size: 1.2rem;
+            color: #7e7e7e;
+          }
+          &:hover i {
+            color: map-get($map: $couleur, $key: primaire);
+          }
+
+          &__nbr {
+            position: relative;
+            left: -12px;
+            @include flex-centrer;
+            width: 24px;
+            height: 24px;
+            color: white;
+            background-color: map-get($map: $couleur, $key: primaire);
+            border-radius: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  // **** section restaurants ***
+  .resto-choix {
+    background: map-get($map: $couleur, $key: fond);
+    padding: 50px 20px 50px 20px;
+    & h1 {
+      margin-bottom: 20px;
+    }
+    &__liste {
+      display: grid;
+      gap: 20px;
+      width: 100%;
+
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(4, auto);
+
+      //mode tablette et bureau (si superieur au mobile)
+      @media all and (min-width: map-get($map: $breakpoint, $key:mobile )) {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+      }
+
+      &__vignette {
+        position: relative;
+        height: 250px;
+        width: 100%;
+
+        border-radius: 15px;
+        @include hombre-bas;
+
+        &:hover {
+          @include hover-bas;
+        }
+
+        &__lien {
+          & img {
+            height: 175px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px 15px 0px 0px;
+
+            min-height: 0;
+            min-height: 0;
+          }
+
+          &__nouveau {
+            position: absolute;
+            width: 70px;
+            height: 25px;
+            top: 15px;
+            right: 15px;
+
+            font-size: 0.8rem;
+
+            text-align: center;
+            padding-top: 5px;
+
+            border-radius: 2px 2px 2px 2px;
+
+            background-color: map-get($map: $couleur, $key: tertiaire);
+            color: darken(
+              $color: map-get($map: $couleur, $key: tertiaire),
+              $amount: 40%
+            );
+
+            //animation clignottante
+            animation: clignotte 2000ms linear infinite;
+          }
+          &__info {
+            height: 75px;
+            width: 100%;
+            padding: 15px 10px 15px 10px;
+          }
+        }
+        &__favoris {
+          position: absolute;
+          height: 30px;
+          width: 30px;
+          bottom: 20px;
+          right: 20px;
+        }
+      }
+    }
+  }
+}

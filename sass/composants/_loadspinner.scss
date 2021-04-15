@@ -1,0 +1,41 @@
+
+
+.compo-loadspinner {
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  top: 0;
+  z-index: 3;
+
+  background: #f6f6f6c2;
+  animation: load-spinner 4s linear both;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & i {
+    margin-top: 20px;
+    font-size: 5rem;
+
+    // technique pour utiliser le gradient sur les icons fontawesome
+    background: radial-gradient(
+      ellipse at right center,
+      map-get($map: $couleur, $key: secondaire),
+      darken(map-get($map: $couleur, $key: secondaire), 50%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: initial;
+  }
+  & p {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: darken(map-get($map: $couleur, $key: secondaire), 50%);
+    animation: clignotte 1s linear infinite both;
+  }
+}
