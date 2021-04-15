@@ -1,30 +1,27 @@
 header {
- 
   height: 65px;
   width: 100%;
-  top:0;
-  display: flex;
-  justify-content: center;
- align-items: center;
-position: fixed;
-background: white;
-@include hombre-bas;
-//box-shadow: 0px 0px 12px 0px black;
-z-index: 2;
+  top: 0;
+  @include flex-centrer;
+  position: fixed;
+  background: white;
+  @include hombre-bas;
+  //box-shadow: 0px 0px 12px 0px black;
+  z-index: 2;
 
   & a {
-      width: 30px;  
-      text-align: center;
-      & i{     
-          font-size: 1.8rem;
-      }
-  }  
-   & div { 
+    width: 30px;
     text-align: center;
-    width: 300px; 
-    & img {    
-       margin-top:5px;
-       height: 30px;     
+    & i {
+      font-size: 1.8rem;
     }
-   }
- }
+  }
+  & div {
+    text-align: center;
+    width: 300px;
+    & img {
+      margin-top: 5px;
+      height: 30px;
+    }
+  }
+}

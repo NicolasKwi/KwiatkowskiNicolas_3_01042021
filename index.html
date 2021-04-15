@@ -22,17 +22,16 @@
 
 <body>
     <div>
-        <header>
-            <a href=""> <i class="fas fa-arrow-left"></i></a>
+        <header>          
             <div><img src="./public/images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood"> </div>
         </header>
-         <!--composant-->
-        <div class="compo-loadspinner">           
+        <!--composant-->
+        <div class="compo-loadspinner">
             <img src="./public/images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood">
             <i class="fas fa-spinner fa-pulse"></i>
             <p>Chargement</p>
         </div>
-        <div class="main">
+        <div class="main-acceuil">
             <section class="presentation">
                 <div class="presentation__loc">
                     <i class="fas fa-map-marker-alt"></i>
@@ -42,7 +41,7 @@
                     <h2 class="presentation__explo__titre">Réservez le menu qui vous convient</h2>
                     <p class="presentation__explo__info">Découvrez des restaurants d'exeption, séléctionés par nos
                         soins.</p>
-                    <a class="presentation__explo__boutton" href="">
+                    <a class="presentation__explo__boutton" href="#restaurants">
                         <p>Explorer nos restaurants</p>
                     </a>
                 </div>
@@ -62,7 +61,8 @@
                         <div class="presentation__fonc__info__etape">
                             <p class="presentation__fonc__info__etape__nbr">3</p>
                             <i class="fas fa-store"></i>
-                            <p class="presentation__fonc__info__etape__txt">Dégustez au restaurant</p>
+                            <!-- id="restaurants" sauter jusqu'au restos avec la taille du header-->
+                            <p id="restaurants" class="presentation__fonc__info__etape__txt">Dégustez au restaurant</p>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,8 @@
                 <article class="resto-choix__liste">
 
                     <div class="resto-choix__liste__vignette">
-                        <a class="resto-choix__liste__vignette__lien" href="">
+                        <a class="resto-choix__liste__vignette__lien"
+                            href="./public/pages/menu-la-galette-du-gout.html">
                             <img src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                                 alt="Photo La galette du gout">
                             <p class="resto-choix__liste__vignette__lien__nouveau">Nouveau</p>
@@ -154,10 +155,10 @@
             </a>
             <div class="footer__liens">
                 <a href="" class="footer__liens__1">
-                    <p>Proposer un restaurant</p>
+                    <p><i class="fas fa-utensils"></i>Proposer un restaurant</p>
                 </a>
                 <a href="" class="footer__liens__2">
-                    <p>Devenir partenaire</p>
+                    <p><i class="fas fa-hands-helping"></i>Devenir partenaire</p>
                 </a>
                 <a href="" class="footer__liens__3">
                     <p>Mentions Légales</p>

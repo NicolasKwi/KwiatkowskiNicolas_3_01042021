@@ -27,9 +27,11 @@
       map-get($map: $couleur, $key: secondaire),
       darken(map-get($map: $couleur, $key: secondaire), 50%)
     );
-    background-clip: text;
+   // background-clip: text;
+    -moz-background-clip: text;       
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
     display: initial;
   }
   & p {

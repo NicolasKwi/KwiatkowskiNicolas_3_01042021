@@ -1,21 +1,6 @@
-//titres
-h1,
-h2,
-h3 {
-  font-family: "Roboto", sans-serif;
-  font-style: bold;
-  font-size: 1.3rem;
-}
-h3 {
-  font-size: 1rem;
-}
-//cache le retour à l'index, utilisé pour les pages menu des restaurants
-header a {
-  display: none;
-}
 
 // code page acceuil
-.main {
+.main-acceuil {
   margin-top: 66px;
 
   // **** section presentation ****
@@ -24,9 +9,12 @@ header a {
       height: 50px;
       @include flex-centrer;
       background: map-get($map: $couleur, $key: fond-fonce);
-
+  
       & p {
         margin-left: 15px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
     &__explo {
@@ -202,6 +190,7 @@ header a {
             padding: 15px 10px 15px 10px;
           }
         }
+        
         &__favoris {
           position: absolute;
           height: 30px;
