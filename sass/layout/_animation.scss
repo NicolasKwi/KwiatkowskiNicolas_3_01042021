@@ -1,32 +1,43 @@
 //animation loadspinner
 @keyframes load-spinner {
-    0%,
-    90% {
-      opacity: 1;
-      // z-index: 3;
-    }
-    99% {
-      opacity: 0;
-      z-index: 3;
-    }
-    100% {
-      opacity: 0;
-      z-index: -3;
-      display: none;
-    }
+  0%,
+  90% {
+    opacity: 1;
+    // z-index: 3;
   }
-  //animation clignottante (opacity)
+  99% {
+    opacity: 0;
+    z-index: 3;
+  }
+  100% {
+    opacity: 0;
+    z-index: -3;
+    display: none;
+  }
+}
+//animation clignottante (opacity)
 @keyframes clignotte {
-    0% {
-      opacity: 0;
-    }
-    30% {
-      opacity: 1;
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+  0% {
+    opacity: 0;
   }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+//animation menu plat
+@keyframes affichage-plat {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);    
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);    
+  }
+}

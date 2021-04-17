@@ -5,9 +5,10 @@
 }
 body,header,.loadspinner{
   max-width: 1200px;
-  min-width: 300px;
-  margin: auto;
+  min-width: 350px;
+  margin: auto;  
+}
+body,.loadspinner{
   justify-content: center;
 }
-
 

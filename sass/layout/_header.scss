@@ -2,23 +2,26 @@ header {
   height: 65px;
   width: 100%;
   top: 0;
-  @include flex-centrer;
+  display: flex;
+
+  align-items: center;
   position: fixed;
   background: white;
-  @include hombre-bas;
-  //box-shadow: 0px 0px 12px 0px black;
+  @include hombre-bas;  
   z-index: 2;
-
+  
   & a {
     width: 30px;
-    text-align: center;
+    margin-left: 20px;
+    text-align: center;   
     & i {
       font-size: 1.8rem;
     }
   }
-  & div {
-    text-align: center;
-    width: 300px;
+  & div { 
+    flex: 1;
+    text-align: center;    
+    //width: 300px;
     & img {
       margin-top: 5px;
       height: 30px;

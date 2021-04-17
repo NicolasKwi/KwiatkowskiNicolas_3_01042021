@@ -7,8 +7,11 @@
 
 body, header, .loadspinner {
   max-width: 1200px;
-  min-width: 300px;
+  min-width: 350px;
   margin: auto;
+}
+
+body, .loadspinner {
   justify-content: center;
 }
 
@@ -17,22 +20,22 @@ body, header, .loadspinner {
   font-size: 1rem;
 }
 
-h1,
-h2,
-h3 {
+h1, h3 {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  font-size: 1.3rem;
 }
 
-h3 {
-  font-size: 1rem;
-}
-
-h4 {
+h2, h4 {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.1rem;
   font-weight: lighter;
+}
+
+h1 {
+  font-size: 1.3rem;
+}
+
+h4 {
   color: white;
 }
 
@@ -55,7 +58,7 @@ a {
   top: 0;
   z-index: 3;
   background: #f6f6f6c2;
-  animation: load-spinner 4s linear both;
+  animation: load-spinner 3s linear both;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,6 +121,114 @@ a {
   display: initial;
 }
 
+.type-menu {
+  margin-top: 30px;
+  background-color: #f6f6f6;
+}
+.type-menu h3 {
+  font-weight: lighter;
+  width: 50%;
+  height: 30px;
+  position: relative;
+}
+.type-menu h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 40px;
+  border-bottom: 4px solid #99e2d0;
+}
+.type-menu__liste {
+  display: grid;
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: repeat(3, auto);
+  background-color: #f6f6f6;
+}
+.type-menu__liste :nth-child(1) {
+  animation-delay: 3s;
+}
+.type-menu__liste :nth-child(2) {
+  animation-delay: 3.15s;
+}
+.type-menu__liste :nth-child(3) {
+  animation-delay: 3.3s;
+}
+.type-menu__liste__plat {
+  display: flex;
+  margin-top: 15px;
+  padding-left: 10px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  box-sizing: content-box;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: affichage-plat 1s ease-in-out both;
+}
+.type-menu__liste__plat:hover {
+  box-shadow: 0px 3px 5px #9256dc88;
+  cursor: pointer;
+}
+.type-menu__liste__plat:hover .type-menu__liste__plat__selection {
+  width: 70px;
+}
+.type-menu__liste__plat:hover i {
+  transform: rotateZ(360deg);
+}
+.type-menu__liste__plat__info {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px 30px 10px 10px;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: auto 30px;
+  grid-template-rows: repeat(2, auto);
+}
+.type-menu__liste__plat__info__nom {
+  grid-column: 1;
+  grid-row: 1;
+  font-weight: bold;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.type-menu__liste__plat__info__desc {
+  grid-column: 1;
+  grid-row: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.type-menu__liste__plat__info__prix {
+  grid-column: 2;
+  grid-row: 2;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.type-menu__liste__plat__selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 15px 15px 0px;
+  background-color: #99e2d0;
+  width: 0px;
+  transition: width 250ms linear;
+}
+.type-menu__liste__plat__selection i {
+  color: white;
+  font-size: 1.6rem;
+  transform: rotateZ(0);
+  transition: transform 250ms linear;
+}
+
 @keyframes load-spinner {
   0%, 90% {
     opacity: 1;
@@ -146,12 +257,21 @@ a {
     opacity: 0;
   }
 }
+@keyframes affichage-plat {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 header {
   height: 65px;
   width: 100%;
   top: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
   position: fixed;
   background: white;
@@ -160,14 +280,15 @@ header {
 }
 header a {
   width: 30px;
+  margin-left: 20px;
   text-align: center;
 }
 header a i {
   font-size: 1.8rem;
 }
 header div {
+  flex: 1;
   text-align: center;
-  width: 300px;
 }
 header div img {
   margin-top: 5px;
@@ -402,24 +523,69 @@ footer .footer__liens i {
   right: 20px;
 }
 
-.main-restaurant {
-  margin-top: 66px;
+.photo__lap-palette-du-gout {
+  background-image: url("../../public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
 }
-.main-restaurant .restaurant img {
-  height: 20%;
+
+.main-restaurant .restaurant {
+  display: inline-block;
+  height: 100%;
+  min-height: 200px;
   width: 100%;
-  object-fit: cover;
+  margin-top: 66px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media all and (max-width: 800px) {
+  .main-restaurant .restaurant {
+    background-position: top;
+    background-size: 150% auto;
+  }
+}
+.main-restaurant .restaurant .menu {
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  margin: 300px auto 0px auto;
+  padding: 20px;
+  border-radius: 15px 15px 0px 0px;
+  background-color: #f6f6f6;
 }
 .main-restaurant .restaurant .menu .pres-restaurant {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
 }
+.main-restaurant .restaurant .menu .pres-restaurant h2 {
+  flex: 2;
+  font-size: 1.7rem;
+}
 .main-restaurant .restaurant .menu .pres-restaurant__favoris {
-  position: absolute;
+  position: relative;
+  margin-right: 5px;
+  margin-left: 10px;
   height: 30px;
   width: 30px;
-  right: 20px;
+}
+.main-restaurant .restaurant .menu__commander-boutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 30px auto;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background: radial-gradient(ellipse at 20px 5px, #ae80e5, #9356dc);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+.main-restaurant .restaurant .menu__commander-boutton:hover {
+  background: radial-gradient(ellipse at 100px 25px, #9356dc, #ae80e5);
+  box-shadow: 0px 3px 5px #9256dc88;
+}
+.main-restaurant .restaurant .menu__commander-boutton p {
+  color: white;
 }
 
 /* -- ordre de priorité (pense bete) --

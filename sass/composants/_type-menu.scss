@@ -1,0 +1,118 @@
+.type-menu {
+  margin-top: 30px;
+  background-color: map-get($map: $couleur, $key: fond);
+  & h3 {
+    font-weight: lighter;
+    width: 50%;
+    height: 30px;
+    position: relative;
+  }
+  & h3::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 40px;
+    border-bottom: 4px solid map-get($map: $couleur, $key: tertiaire);
+  }
+
+  &__liste {
+    display: grid;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(3, auto);
+    background-color: map-get($map: $couleur, $key: fond);
+
+    & :nth-child(1) {
+      animation-delay: $loadspinner-duration;
+    }
+    & :nth-child(2) {
+      animation-delay: ($loadspinner-duration + 150ms);
+    }
+    & :nth-child(3) {
+      animation-delay: ($loadspinner-duration + 300ms);
+    }
+
+    &__plat {
+      display: flex;
+
+      margin-top: 15px;
+      padding-left: 10px;
+      border-radius: 15px;
+      background-color: white;
+      @include hombre-bas;
+      box-sizing: content-box;
+      overflow: hidden;
+
+      opacity: 0;
+      transform: translateY(10px);
+      animation: affichage-plat 1s ease-in-out both;
+
+      &:hover {
+        @include hover-bas;
+        cursor: pointer;
+      }
+      //animation des selections
+      &:hover &__selection {
+        width: 70px;
+      }
+      &:hover i {
+        transform: rotateZ(360deg);
+      }
+
+      &__info {
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        padding: 10px 30px 10px 10px;
+        display: grid;
+        gap: 5px;
+        grid-template-columns: auto 30px;
+        grid-template-rows: repeat(2, auto);
+
+        //alignement des infos sur la grile
+        &__nom {
+          grid-column: 1;
+          grid-row: 1;
+          font-weight: bold;
+          font-size: 1.1rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &__desc {
+          grid-column: 1;
+          grid-row: 2;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &__prix {
+          grid-column: 2;
+          grid-row: 2;
+          font-weight: bold;
+          font-size: 1.1rem;
+        }
+      }
+      &__selection {
+        @include flex-centrer;
+        border-radius: 0px 15px 15px 0px;
+        background-color: map-get($map: $couleur, $key: tertiaire);
+
+        width: 0px;
+        transition: width 250ms linear;
+
+        & i {
+          color: white;
+          font-size: 1.6rem;
+          transform: rotateZ(0);
+          transition: transform 250ms linear;
+        }
+      }
+    }
+  }
+}

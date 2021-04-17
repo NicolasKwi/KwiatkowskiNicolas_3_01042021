@@ -10,7 +10,7 @@
   z-index: 3;
 
   background: #f6f6f6c2;
-  animation: load-spinner 4s linear both;
+  animation: load-spinner $loadspinner-duration linear both;
 
   display: flex;
   flex-direction: column;

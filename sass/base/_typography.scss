@@ -1,25 +1,26 @@
 * {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
- // color: black;
+  // color: black;
 }
 
 //titres
-h1,
-h2,
-h3 {
+h1,h3 {
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  font-size: 1.3rem;
+  font-weight: bold; 
 }
-h3 {
-  font-size: 1rem;
+//titre restaurant dans les menus + footer
+h2,h4 {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.1rem;
+  font-weight: lighter;
+}
+
+h1{
+  font-size: 1.3rem;
 }
 //sert pour le footer
 h4 {
-  font-family: "Shrikhand", sans-serif;
-  font-size: 1.1rem;
-font-weight: lighter;
   color: white;
 }
 
@@ -30,6 +31,6 @@ a {
   font-size: 1rem;
 }
 //ajustement de la taille de l'icon dans le footer (devenir partenaire)
-.fa-hands-helping{
+.fa-hands-helping {
   font-size: 0.8rem;
 }

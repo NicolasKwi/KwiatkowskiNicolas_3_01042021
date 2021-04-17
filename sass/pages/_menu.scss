@@ -1,0 +1,79 @@
+//photos d'arriere plan des restaurant- à mettre dans la section html restaurant
+.photo__lap-palette-du-gout {
+  background-image: url("../../public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+//code page menu
+.main-restaurant {
+  & .restaurant {
+    display: inline-block;
+    height: 100%;
+    min-height: 200px;
+    width: 100%;
+    margin-top: 66px;
+    //background-image: url("../../public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; // 100% auto;
+    background-position: center;
+    @media all and (max-width: 800px) {
+      background-position: top;
+      background-size: 150% auto;
+    }
+
+    & .menu {  
+      height: 100%;
+      width: 100%;
+      max-width: 800px;
+      margin: 300px auto 0px auto;
+      padding: 20px;
+      border-radius: 15px 15px 0px 0px;
+   
+      background-color: map-get($map: $couleur, $key: fond);
+
+      & .pres-restaurant {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        & h2 {
+          flex: 2;
+          font-size: 1.7rem;
+        }
+
+        &__favoris {
+          position: relative;
+          margin-right: 5px;
+          margin-left: 10px;
+          height: 30px;
+          width: 30px;
+        }
+      }
+      &__commander-boutton {      
+        @include flex-centrer;       
+        margin: 50px auto 30px auto;
+        width: 200px;
+        height: 50px;
+        border-radius: 25px;
+        background: radial-gradient(
+          ellipse at 20px 5px,
+          lighten(map-get($map: $couleur, $key: primaire), 10%),
+          map-get($map: $couleur, $key: primaire)
+        );
+        @include hombre-bas;
+        &:hover {
+          background: radial-gradient(
+            ellipse at 100px 25px,
+            map-get($map: $couleur, $key: primaire),
+            lighten(map-get($map: $couleur, $key: primaire), 10%)
+          );
+          @include hover-bas;
+        }
+
+        & p {
+          color: white;
+        }
+      }
+    }
+  }
+}
