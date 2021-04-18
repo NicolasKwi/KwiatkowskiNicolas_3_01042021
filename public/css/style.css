@@ -36,6 +36,7 @@ h1 {
 }
 
 h4 {
+  font-size: 1.3rem;
   color: white;
 }
 
@@ -157,6 +158,9 @@ a {
 }
 .type-menu__liste :nth-child(3) {
   animation-delay: 3.3s;
+}
+.type-menu__liste :nth-child(4) {
+  animation-delay: 3.45s;
 }
 .type-menu__liste__plat {
   display: flex;
@@ -301,6 +305,8 @@ footer {
 }
 footer .footer__titre {
   display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 120px;
 }
 footer a {
@@ -523,8 +529,20 @@ footer .footer__liens i {
   right: 20px;
 }
 
-.photo__lap-palette-du-gout {
+.photo__la-palette-du-gout {
   background-image: url("../../public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+.photo__le-delice-des-sens {
+  background-image: url("../../public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+
+.photo__la-note-enchantee {
+  background-image: url("../../public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+
+.photo__a-la-française {
+  background-image: url("../../public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
 }
 
 .main-restaurant .restaurant {
