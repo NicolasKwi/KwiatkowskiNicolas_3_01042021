@@ -42,17 +42,16 @@
         width: 300px;
         height: 50px;
         border-radius: 25px;
-        background: radial-gradient(
-          ellipse at 20px 5px,
-          lighten(map-get($map: $couleur, $key: primaire), 10%),
-          map-get($map: $couleur, $key: primaire)
+        background:  linear-gradient(to bottom,      
+          map-get($map: $couleur, $key: secondaire),
+         map-get($map: $couleur, $key: primaire)
         );
         @include hombre-bas;
         &:hover {
-          background: radial-gradient(
-            ellipse at 100px 25px,
-            map-get($map: $couleur, $key: primaire),
-            lighten(map-get($map: $couleur, $key: primaire), 10%)
+          
+          background:  linear-gradient(to bottom,      
+          map-get($map: $couleur, $key: secondaire),
+          lighten(map-get($map: $couleur, $key: primaire),10% )         
           );
           @include hover-bas;
         }
