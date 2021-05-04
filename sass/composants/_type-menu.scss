@@ -28,16 +28,16 @@
     background-color: map-get($map: $couleur, $key: fond);
 
     & :nth-child(1) {
-      animation-delay: $loadspinner-duration;
+      animation-delay: 150ms;
     }
     & :nth-child(2) {
-      animation-delay: ($loadspinner-duration + 150ms);
+      animation-delay: 300ms;
     }
     & :nth-child(3) {
-      animation-delay: ($loadspinner-duration + 300ms);
+      animation-delay: 450ms;
     }
     & :nth-child(4) {
-      animation-delay: ($loadspinner-duration + 450ms);
+      animation-delay: 600ms;
     }
 
     &__plat {
